@@ -7,7 +7,7 @@ credential = ManagedIdentityCredential()
 
 # Create BlobServiceClient
 blob_service_client = BlobServiceClient(
-    account_url=f"https://storagetrainingmay.blob.core.windows.net",
+    account_url="https://storagetrainingmay.blob.core.windows.net",
     credential=credential
 )
 
@@ -15,7 +15,8 @@ blob_service_client = BlobServiceClient(
 container_list = blob_service_client.list_containers()
 st.title("List Storage Containers")
 
-container_list = []
 for container in container_list:
     st.write(container)
+
+st.write("Listing Containers Done...")
 
